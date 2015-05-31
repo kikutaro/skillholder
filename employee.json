@@ -1,0 +1,48 @@
+[
+  {
+    "name": "構造太郎",
+    "img" : "kktaro.jpg",
+    "skillType" :
+    [
+      {
+        "type" : "プログラミング",
+        "skills" : [
+          {
+              "name" : "Java",
+              "score" : 7
+          },
+          {
+              "name" : "C#",
+              "score" : 5
+          }
+        ]
+      },
+      {
+        "type" : "語学",
+        "skills" : [
+          {
+            "name" : "英語",
+            "score" : 7
+          }
+        ]
+      }
+    ],
+    "skillRelation" : ["構造次郎"]
+　},
+  {
+  "name": "構造次郎",
+  "img" : "kkjiro.jpg",
+  "skillType" :
+  [
+    {
+      "type" : "プログラミング",
+      "skills" : [
+        {
+            "name" : "C",
+            "score" : 9
+        }
+      ]
+    }
+  ]
+  }
+]
