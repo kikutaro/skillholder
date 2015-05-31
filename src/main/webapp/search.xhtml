@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="title">検索</ui:define>
+        
+        <ui:define name="content">
+            <p:inputText value="#{searchBean.condition}" />
+            <p:commandButton value="検索" actionListener="#{searchBean.search()}" update="@form" />
+            
+            <p:separator />
+            
+            <p:dataGrid id="dgRet" var="emp" value="#{searchBean.results}" columns="3"
+                        emptyMessage="検索結果がありません。">
+                <p:panel id="pnlUser" header="#{emp.name}" style="height: 380px;">
+                    <h:panelGrid columns="2">
+                        <p:graphicImage id="img" value="/resources/images/#{emp.img}" />
+                        <p:dataTable var="type" value="#{emp.skillType}">
+                            <p:subTable var="skill" value="#{type.skills}">
+                                <f:facet name="header">#{type.type}</f:facet>
+                                <p:column>
+                                    <h:outputText value="#{skill.name}" />
+                                </p:column>
+                                <p:column>
+                                    <p:rating readonly="true" stars="10" value="#{skill.score}" />
+                                </p:column>
+                            </p:subTable>
+                        </p:dataTable>
+                    </h:panelGrid>
+                </p:panel>
+                <p:overlayPanel for="img" showEffect="slide" hideEffect="slide" 
+                                    showEvent="mouseover" hideEvent="mouseout">
+                    <p:panel header="詳細">
+                        <h:panelGrid columns="1">
+                            <h:outputText value="Web実計から過去のプロジェクト情報を(できれば自動で)拾って表示したり" />
+                            <p:separator />
+                            <h:outputText value="デジエから資格情報を(できれば自動で)拾って表示したり" /> 
+                            <p:separator />
+                            <h:outputText value="普段参加している社外のコミュニティや勉強会情報など" />
+                        </h:panelGrid>
+                    </p:panel>
+                </p:overlayPanel>
+            </p:dataGrid>
+        </ui:define>
+    </ui:composition>
+</html>
+

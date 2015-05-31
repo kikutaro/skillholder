@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>ログイン</title>
+    </h:head>
+    <h:outputStylesheet library="css" name="common.css" />
+    <h:outputStylesheet library="css" name="login.css" />
+    <h:body styleClass="basefont">
+        <h:form prependId="true">
+            <p:panel header="Skill Holder" styleClass="login_panel">
+                <h:panelGrid columns="2" cellpadding="5" styleClass="login_panelgrid">
+                    <h:outputText value="ログインID" />
+                    <h:inputText />
+                    <h:outputText value="パスワード" />
+                    <h:inputText pt:type="password" />
+                    
+                    <p:commandButton value="ログイン" ajax="false" action="home.xhtml" />
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

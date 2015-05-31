@@ -1,0 +1,23 @@
+/* 
+    Created on : 2015/05/01, 14:03:07
+    Author     : kikuta
+*/
+
+.login_panel{
+    clear: both;
+    width: 400px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    padding: 25px 20px;
+}
+
+.login_panelgrid{
+    clear: both;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px;
+    padding: 25px 20px;
+}

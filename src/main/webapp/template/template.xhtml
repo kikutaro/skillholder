@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>
+            <ui:insert name="title">Title</ui:insert>
+        </title>
+    </h:head>
+    <h:outputStylesheet library="css" name="common.css" />
+    <h:body styleClass="basefont">
+        <h:form id="frm">
+            <p:growl sticky="true" />
+            <p:sticky target="tlb" />
+            <!-- ヘッダ -->
+            <ui:insert name="header">
+                <p:toolbar id="tlb">
+                    <f:facet name="left">
+                        <h:panelGrid columns="1">
+                            <p:menuButton value="メニュー">
+                                <p:menuitem value="ホーム" ajax="false" action="home.xhtml" />
+                                <p:menuitem value="スキル検索" ajax="false" action="search.xhtml" />
+                            </p:menuButton>
+                        </h:panelGrid>
+                    </f:facet>
+                    <f:facet name="right">
+                        <h:panelGrid columns="3">
+                            <p:themeSwitcher value="#{themeBean.theme}">
+                                <f:selectItem itemLabel="テーマ選択" itemValue="" />
+                                <f:selectItems value="#{themeBean.themes}" />
+                                <p:ajax />
+                            </p:themeSwitcher>
+                            <span class="ui-separator">
+                                <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                            </span>
+                            <p:commandButton value="ログアウト" />
+                        </h:panelGrid>
+                    </f:facet>
+                </p:toolbar>
+            </ui:insert>
+            
+            <p:separator />
+            
+            <!-- コンテンツ -->
+            <ui:insert name="content" />
+        </h:form>
+    </h:body>
+</html>
+
