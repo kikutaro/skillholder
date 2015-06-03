@@ -11,7 +11,7 @@
     <h:outputStylesheet library="css" name="login.css" />
     <h:body styleClass="basefont">
         <h:form prependId="true">
-            <p:panel header="Skill Holder" styleClass="login_panel">
+            <p:panel id="pnlLogin" header="Skill Holder" styleClass="login_panel">
                 <h:panelGrid columns="2" cellpadding="5" styleClass="login_panelgrid">
                     <h:outputText value="ログインID" />
                     <h:inputText />
@@ -20,6 +20,8 @@
                     
                     <p:commandButton value="ログイン" ajax="false" action="home.xhtml" />
                 </h:panelGrid>
+                <p:tooltip for="pnlLogin" trackMouse="true"
+                       value="プロトのログイン画面は認証を設けていないので何も入力せず「ログイン」ボタン押して頂いて大丈夫です" />
             </p:panel>
         </h:form>
     </h:body>
